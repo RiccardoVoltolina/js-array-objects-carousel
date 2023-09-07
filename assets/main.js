@@ -59,9 +59,8 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     './assets/img/03.webp', //etc
     './assets/img/04.webp',
     './assets/img/05.webp',
-  ]
- */
-const slides = [
+  ] */
+  const slides = [
     {
         immagine : './assets/img/01.webp',
     },
@@ -79,7 +78,7 @@ const slides = [
     },
 
   ]
-  console.log(slides);
+
   
   let activeSlide = 0;
   
@@ -93,24 +92,17 @@ const slides = [
   
   /* Print all images into the dom */
   // loop over the slides 
-
-slides.forEach(function(immagineSingola){
-    console.log(immagineSingola);
-    
-    const slideMarkup = `<img class="${activeSlide === activeSlide ? 'active' : '' }" src="${immagineSingola.immagine}" alt="">`
-    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
-
-})
-
-/*   for (let i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     const slidePath = slides[i];
     console.log(slidePath);
     
     // for each slide we create the markup
+    const slideMarkup = `<img class="${activeSlide === i ? 'active' : '' }" src="${slidePath}" alt="">`
     //console.log(slideMarkup);
   
+    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
   
-  } */
+  }
   
   
   /* 
@@ -154,30 +146,19 @@ slides.forEach(function(immagineSingola){
   Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di miniatura attiva.
   
   */
+  
+  
   const thumbsElement = document.querySelector('.thumbnails')
-
-
-  slides.forEach(function(immagineSingola){
-    console.log(immagineSingola);
-    
-    const slideMarkup = `<img class="${activeSlide === activeSlide ? 'active' : '' }" src="${immagineSingola.immagine}" alt="">`
-    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
-
-})
-
   
-  
-  
-/*   for (let i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     const thumbPath = slides[i];
-    console.log(thumbPath);
     const thumbMarkup = `<img class="thumb ${activeSlide === i ? 'active' : ''}" src="${thumbPath}" alt="">`
     //console.log(thumbMarkup);
   
     thumbsElement.insertAdjacentHTML('beforeend', thumbMarkup)
     
   }
- */  
+  
   
   
   
@@ -261,16 +242,3 @@ slides.forEach(function(immagineSingola){
     // add the active class to the next slide
     nextSlide.classList.add('active')
   })
-
-
-  /* Consegna:
-Riprendiamo il live coding visto in classe un pó di tempo fá sul carosello di immagini e rifacciamolo :gatto_che_urla:, questa volta usando gli oggetti.
-:boolean-hug: Potete prendere come riferimento il codice scritto insieme nel live, che troverete direttamente nella mia repository di github a questo link: [https://github.com/fabiopacifici/104_js/tree/main/live_slider]
-Modifichiamo il codice dell'esercizio per renderlo funzionante con un array di oggetti al posto di un array di stringhe.
-Bonus 0:
-Non eramamo ancora a conoscenda di molti strumenti utili, come ad esempio le funzioni. É possibile fare refactoring del codice, pulendolo e creando quanche funzione che possa rendere tutto piú leggibile e pulito?
-Bonus 1:
-Sperimentiamo attraverso l'uso delle timing functions anche una funzionalità di scorrimento al nostro carosello:
-al click di un bottone o già dall'inizio possiamo far partire, ad intervalli di tempo a piacere, lo scorrimento delle immagini disponibili nel carosello stesso.
-Bonus 2:
-E se volessi un bottone per invertire la "direzione" del carosello? */
