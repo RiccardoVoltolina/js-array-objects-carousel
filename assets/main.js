@@ -209,11 +209,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     }
   
   
-    // select the next slide
-    const nextSlide = slidesImages[activeSlide]
-    console.log(nextSlide);
-    // add the active class to the next slide
-    nextSlide.classList.add('active')
+    nextSlide()
   
   
     /* TODO */
@@ -226,11 +222,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     nextThumb.classList.add('active')
   
   
-  })
-
-
-
-  
+  })  
   // intercept click on the prev icon
   
   
@@ -255,12 +247,17 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     console.log(activeSlide);
   
   
-    // select the next slide
-    const nextSlide = slidesImages[activeSlide]
-    console.log(nextSlide);
-    // add the active class to the next slide
-    nextSlide.classList.add('active')
+    nextSlide()
   })
+
+
+  function nextSlide() {
+      // select the next slide
+      const nextSlide = slidesImages[activeSlide]
+      console.log(nextSlide);
+      // add the active class to the next slide
+      nextSlide.classList.add('active')
+  }
 
 
   function removeActive() {
