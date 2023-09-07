@@ -60,7 +60,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     './assets/img/04.webp',
     './assets/img/05.webp',
   ] */
-  const slides = [
+   const slides = [
     {
         immagine : './assets/img/01.webp',
     },
@@ -77,7 +77,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
         immagine : './assets/img/02.webp',
     },
 
-  ]
+  ] 
 
   
   let activeSlide = 0;
@@ -93,12 +93,12 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   /* Print all images into the dom */
   // loop over the slides 
   for (let i = 0; i < slides.length; i++) {
-    const slidePath = slides[i];
+    const slidePath = slides[i]; // single slide path
     console.log(slidePath);
     
     // for each slide we create the markup
-    const slideMarkup = `<img class="${activeSlide === i ? 'active' : '' }" src="${slidePath}" alt="">`
-    //console.log(slideMarkup);
+    const slideMarkup = `<img class="${activeSlide === i ? 'active' : '' }" src="${slidePath.immagine}" alt="">`
+    console.log(slideMarkup);
   
     sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
   
@@ -149,10 +149,17 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   
   
   const thumbsElement = document.querySelector('.thumbnails')
+
+
+  /* 
+  slides.map((immagineSingola) =>{
+    return immagineSingola.immagine
+  })
+  */
   
   for (let i = 0; i < slides.length; i++) {
     const thumbPath = slides[i];
-    const thumbMarkup = `<img class="thumb ${activeSlide === i ? 'active' : ''}" src="${thumbPath}" alt="">`
+    const thumbMarkup = `<img class="thumb ${activeSlide === i ? 'active' : ''}" src="${thumbPath.immagine}" alt="">`
     //console.log(thumbMarkup);
   
     thumbsElement.insertAdjacentHTML('beforeend', thumbMarkup)
