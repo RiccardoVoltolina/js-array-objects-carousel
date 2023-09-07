@@ -305,3 +305,5 @@ function nextSlideAndRemove() {
 
 }
 
+setInterval(nextSlideAndRemove, 3000)
+
