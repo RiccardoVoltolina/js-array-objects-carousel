@@ -224,7 +224,7 @@ ciclo(thumbsElement)
   
   
     // select the next thumb
-    const nextThumb = document.querySelectorAll('.thumb')[activeSlide]
+    const nextThumb = document.querySelectorAll('.thumbnails > img')[activeSlide]
     console.log(nextThumb);
     // add to the next thumb the active class
     nextThumb.classList.add('active')
