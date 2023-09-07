@@ -179,7 +179,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   } */
 
 
-ciclo(thumbsElement)  
+  ciclo(thumbsElement)  
 
   
   
@@ -189,11 +189,7 @@ ciclo(thumbsElement)
   nextEl.addEventListener('click', function(){
     console.log('cliccato su next');
   
-    // select the current slide
-    const currentSlide = slidesImages[activeSlide]
-    console.log(currentSlide);
-    // remove the active class from the current slide
-    currentSlide.classList.remove('active')
+   removeActive()
   
     // select the active thumb
     const currentThumb = document.querySelector('.thumbnails > img.active')
@@ -232,6 +228,8 @@ ciclo(thumbsElement)
   
   })
 
+
+
   
   // intercept click on the prev icon
   
@@ -241,11 +239,9 @@ ciclo(thumbsElement)
     console.log('cliccato su prev');
   
   
-    // select the current slide
-    const currentSlide = slidesImages[activeSlide]
-    console.log(currentSlide);
-    // remove the active class from the current slide
-    currentSlide.classList.remove('active')
+   removeActive()
+
+
   
     if (activeSlide === 0) {
       activeSlide = slidesImages.length - 1
@@ -265,3 +261,12 @@ ciclo(thumbsElement)
     // add the active class to the next slide
     nextSlide.classList.add('active')
   })
+
+
+  function removeActive() {
+    // select the current slide
+    const currentSlide = slidesImages[activeSlide]
+    console.log(currentSlide);
+    // remove the active class from the current slide
+    return currentSlide.classList.remove('active')
+}
