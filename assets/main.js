@@ -60,26 +60,24 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     './assets/img/04.webp',
     './assets/img/05.webp',
   ] */
-   const slides = [
+   let slides = [
     {
         immagine : './assets/img/01.webp',
     },
     {
-        immagine : './assets/img/05.webp',
-    },
-    {
-        immagine : './assets/img/04.webp',
+        immagine : './assets/img/02.webp',
     },
     {
         immagine : './assets/img/03.webp',
     },
     {
-        immagine : './assets/img/02.webp',
+        immagine : './assets/img/04.webp',
+    },
+    {
+        immagine : './assets/img/05.webp',
     },
 
   ] 
-  const timeChange = 5;
-
   
   let activeSlide = 0;
   
@@ -87,12 +85,20 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   const sliderImagesEl = document.querySelector('.slider .images')
   const prevEl = document.querySelector('.prev')
   const nextEl = document.querySelector('.next')
+  const bottoneInversione = document.querySelector('button')
   
   
   //console.log(sliderImagesEl);
   
   /* Print all images into the dom */
   // loop over the slides 
+
+
+console.log(slides);
+
+    
+  
+
 
 
   function ciclo(stampa) {
@@ -199,7 +205,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     // activeSlide = 4
   
     if (activeSlide === slidesImages.length - 1) {
-      activeSlide = 0
+      activeSlide = 5
       // activeSlide = 5
     } else {
       // increment the activeSlide of 1
@@ -305,5 +311,13 @@ function nextSlideAndRemove() {
 
 }
 
-setInterval(nextSlideAndRemove, 3000)
+ setInterval(nextSlideAndRemove, 3000)
+
+
+ bottoneInversione.addEventListener('click', function () {
+
+
+
+ })
+
 
