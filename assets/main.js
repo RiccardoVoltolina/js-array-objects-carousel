@@ -94,10 +94,10 @@ const slides = [
   /* Print all images into the dom */
   // loop over the slides 
 
-slides.forEach(function(immagine){
-    console.log(immagine);
+slides.forEach(function(immagineSingola){
+    console.log(immagineSingola);
     
-    const slideMarkup = `<img class="${activeSlide === activeSlide ? 'active' : '' }" src="${immagine}" alt="">`
+    const slideMarkup = `<img class="${activeSlide === activeSlide ? 'active' : '' }" src="${immagineSingola.immagine}" alt="">`
     sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
 
 })
@@ -154,19 +154,30 @@ slides.forEach(function(immagine){
   Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di miniatura attiva.
   
   */
-  
-  
   const thumbsElement = document.querySelector('.thumbnails')
+
+
+  slides.forEach(function(immagineSingola){
+    console.log(immagineSingola);
+    
+    const slideMarkup = `<img class="${activeSlide === activeSlide ? 'active' : '' }" src="${immagineSingola.immagine}" alt="">`
+    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
+
+})
+
   
-  for (let i = 0; i < slides.length; i++) {
+  
+  
+/*   for (let i = 0; i < slides.length; i++) {
     const thumbPath = slides[i];
+    console.log(thumbPath);
     const thumbMarkup = `<img class="thumb ${activeSlide === i ? 'active' : ''}" src="${thumbPath}" alt="">`
     //console.log(thumbMarkup);
   
     thumbsElement.insertAdjacentHTML('beforeend', thumbMarkup)
     
   }
-  
+ */  
   
   
   
