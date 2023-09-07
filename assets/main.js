@@ -78,6 +78,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     },
 
   ] 
+  const timeChange = 5;
 
   
   let activeSlide = 0;
@@ -182,9 +183,6 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   ciclo(thumbsElement)  
 
   
-  
-  
-  
   // intercept click on the next icon 
   nextEl.addEventListener('click', function(){
     console.log('cliccato su next');
@@ -210,6 +208,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   
   
     nextSlide()
+
   
   
     /* TODO */
@@ -267,3 +266,42 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     // remove the active class from the current slide
     return currentSlide.classList.remove('active')
 }
+
+function nextSlideAndRemove() {
+  
+  removeActive()
+  
+  // select the active thumb
+  const currentThumb = document.querySelector('.thumbnails > img.active')
+  console.log(currentThumb);
+  // remove the active class from the active thumb
+  currentThumb.classList.remove('active')
+
+  
+  // activeSlide = 4
+
+  if (activeSlide === slidesImages.length - 1) {
+    activeSlide = 0
+    // activeSlide = 5
+  } else {
+    // increment the activeSlide of 1
+    activeSlide++
+  }
+
+
+  nextSlide()
+
+
+
+  /* TODO */
+
+
+  // select the next thumb
+  const nextThumb = document.querySelectorAll('.thumbnails > img')[activeSlide]
+  console.log(nextThumb);
+  // add to the next thumb the active class
+  nextThumb.classList.add('active')
+
+
+}
+
