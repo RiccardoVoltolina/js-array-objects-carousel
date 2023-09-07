@@ -92,7 +92,25 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   
   /* Print all images into the dom */
   // loop over the slides 
-  for (let i = 0; i < slides.length; i++) {
+
+  function ciclo(slides) {
+    for (let i = 0; i < slides.length; i++) {
+        const slidePath = slides[i]; // single slide path
+        console.log(slidePath);
+        
+        // for each slide we create the markup
+        const slideMarkup = `<img class="${activeSlide === i ? 'active' : '' }" src="${slidePath.immagine}" alt="">`
+        console.log(slideMarkup);
+        return slideMarkup
+        console.log(slideMarkup);
+      
+        
+    }
+}
+sliderImagesEl.insertAdjacentHTML('beforeend', ciclo(slides))
+
+
+/*   for (let i = 0; i < slides.length; i++) {
     const slidePath = slides[i]; // single slide path
     console.log(slidePath);
     
@@ -103,7 +121,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
     sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
   
   }
-  
+ */  
   
   /* 
   
