@@ -94,7 +94,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   // loop over the slides 
 
 
-  function ciclo(slides) {
+  function ciclo(stampa) {
     for (let i = 0; i < slides.length; i++) {
         const slidePath = slides[i]; // single slide path
         console.log(slidePath);
@@ -103,13 +103,13 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
         const slideMarkup = `<img class="${activeSlide === i ? 'active' : '' }" src="${slidePath.immagine}" alt="">`
         console.log(slideMarkup);
       
-        sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
+        stampa.insertAdjacentHTML('beforeend', slideMarkup)
       
       }
-      return sliderImagesEl
+      return stampa
   }
 
-  ciclo(slides);
+  ciclo(sliderImagesEl);
 
 
 
@@ -169,15 +169,18 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
   })
   */
   
-  for (let i = 0; i < slides.length; i++) {
+/*   for (let i = 0; i < slides.length; i++) {
     const thumbPath = slides[i];
     const thumbMarkup = `<img class="thumb ${activeSlide === i ? 'active' : ''}" src="${thumbPath.immagine}" alt="">`
     //console.log(thumbMarkup);
   
     thumbsElement.insertAdjacentHTML('beforeend', thumbMarkup)
     
-  }
-  
+  } */
+
+
+ciclo(thumbsElement)  
+
   
   
   
